@@ -32,8 +32,8 @@ _Ils ont déja le DNS pankart.be_
 
 - [Gig starter](https://www.gigstarter.fr/artistes/pankart) site pour réserver des dates pour un groupe,
 - [Lampli](https://lampli.be/artist-profile/pankart/?color=turquoise) site _Luxembourgeois_ pour réserver des dates pour un groupe.
-- [Facebook]()
-- [Instagram]()
+- [Facebook](https://www.facebook.com/PanKart)
+- [Instagram]() _Pas encore trouvé_ <!-- TODO: Trouver leur insta -->
 
 ## 3. Le site
 
@@ -100,9 +100,7 @@ Problème de tomber dans les clichés. Comme pour tout, les sites de groupes se 
 
 Pas évident parce que les sites plutot _conceptuels_, demandent parfois plus de resources. Il faut trouver le juste millieu. Efficace mais avec le moins d'empreinte possible.
 
-### Les _GAFA_ posent un problème de cohérence.
-
-> Google analytics est-elle la bonne solution ?
+> Les _GAFA_ posent un problème de cohérence. Google analytics est-elle la bonne solution ?
 
 Leur philosophie dit que si vraiment ils n'ont pas le choix, ils y vont.
 
