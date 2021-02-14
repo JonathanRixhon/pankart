@@ -33,7 +33,7 @@ _Ils ont déja le DNS pankart.be_
 - [Gig starter](https://www.gigstarter.fr/artistes/pankart) site pour réserver des dates pour un groupe,
 - [Lampli](https://lampli.be/artist-profile/pankart/?color=turquoise) site _Luxembourgeois_ pour réserver des dates pour un groupe.
 - [Facebook](https://www.facebook.com/PanKart)
-- [Instagram]() _Pas encore trouvé_ <!-- TODO: Trouver leur insta -->
+- [Instagram]() _pas encore trouvé_ <!-- TODO: Trouver leur insta -->
 
 ## 3. Le site
 
@@ -60,7 +60,7 @@ _Ils ont déja le DNS pankart.be_
   - Agenda des concerts,
   - Photos, vidéos,
   - News (coup de gueule/coeur),
-  - Bouton _Booking_ qui renvoit sur [Gigstarter](https://www.gigstarter.fr/artistes/pankart),
+  - Bouton _Booking_ qui redirige sur [Gigstarter](https://www.gigstarter.fr/artistes/pankart),
   - Privacy policy,
   - Liens réseaux sociaux,
   - Achats via un formulaire (donc présenta tion des articles),
