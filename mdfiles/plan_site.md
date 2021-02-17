@@ -34,6 +34,9 @@
 ## 5. Discographie
 - Liste des albums;
 - Sous liste avec les titres et lien pour les lire;
+## 6. Paroles
+-   Nom de chanson;
+-   paroles suivent.
 ## 6. Reserver / Nous voir
 - Call to action pour réserver;
 - Lien vers billeterie.
