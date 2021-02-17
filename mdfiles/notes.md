@@ -64,7 +64,7 @@ _Ils ont déja le DNS pankart.be_
   - Privacy policy,
   - Liens réseaux sociaux,
   - Achats via un formulaire (donc présenta tion des articles),
-  - _Bonus un jeu dans lequel on lance des PanKart sur des personnalités politiques controversées_,
+  - _Bonus un jeu dans lequel on lance des PanKart sur des personnalités politiques controversées_.
 - Le site doit être facile à mettre à jour par le client,
 - Le client doit pouvoir être autonome,
 - Tracking (peut être pas passer par les _GAFA_),
