@@ -20,10 +20,14 @@ Exemples de sites de groupe existants.
 Constat général, souvent la même chose, à savoir : 
 - une grande image avec un call to action, 
 - un menu en bandeau au dessus ou au centre de l'image qui se rescentre,
+- polices assez sobres, 
+  
+*nb: les sites sont souvent là pour promouvoir les groupes, ici le but est différent.*
 
 ---
 
 ## Jojo Mayer
+Animations sympas au lancemement, polices cohérentes.
 https://www.behance.net/gallery/107120383/Jojo-Mayer-Website-Redesign?tracking_source=search_projects_recommended%7Cbands%20music
 
 ## Pistes pour le sound design
