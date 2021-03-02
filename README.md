@@ -343,11 +343,11 @@ Au survol de l'album, l'élément s'agrandit légèrement et pousse les autres �
 
 Même principe que la section précédents
 
-### 7.1 Page photos
+### 7.1 Page photos individuelle
 
 Un fil d'Ariane y sera disposé pour que l'utilisateur ne soit pas perdu, il sera cliquable et permettra de revenir en arrière. La collection de photo se déroulera alors en dessous du titre de l'album et au clique, elle pourra s'agrandir.
 
-### 7.2 Page Vidéos
+### 7.2 Page vidéos individuelle
 
 Même chose que pour la page photo à la différence que les collections seront des petites vignettes et lorsqu'on clique dessus, un lecteur se met par-dessus la page et l'utilisateur a le choix ou non de lire la vidéo.
 
@@ -376,11 +376,6 @@ une liste de vignette sera montrée, si on clique sur une vignette, l'utilisateu
 L'aperçu du produit est cliquable et montre le produit en plus grand, il peut y avoir plusieurs photos visionnable grâce à un système de carrousel.
 
 Le bouton prendre contact pour acheter envoie l'utilisateur vers une page similaire à celle du formulaire avec un titre différent, un petit texte explicatif lui explique le fonctionnement de l'achat par formulaire. Les champs de formulaire sont préremplis et lors du clique sur le bouton "passer commande". Une fois ce bouton cliqué, un écran disant "Votre commande a bien été prise en compte" lui sera montré et une proposition pour retourner à la page d'accueil lui sera montrée. Un décompte apparaîtra et un phrase précisera que l'utilisateur sera redirigé sur la page d'accueil.
-
-- Nom du produit,
-- Image représentant ce produit,
-- Description,
-- bouton passer commande
 
 ## Question
 
