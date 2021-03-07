@@ -11,13 +11,15 @@
 1. Avoir des dates,
 2. Présenter le groupe,
 3. Montrer les dates aux utilisateurs pour qu'ils puissent voir PanKart en concert,
-4. Partager les actualités de PanKart.
-5. Partager les opinions de PanKart sur des sujets donnés.
+4. Montrer les dernières vidéos de PanKart,
+5. Partager les actualités de PanKart.
+6. Partager les opinions de PanKart sur des sujets donnés.
 
 ## Besoins de l’utilisateur
 
 1. Réserver des dates,
-2. Voir des futures dates du groupe, les nouvelles sorties musicales découvrir le groupe et voir les actualités.
+2. Voir des futures dates du groupe, les nouvelles sorties musicales découvrir le groupe et voir les actualités,
+3. Découvirir pankart, ses valeurs et son histoire.
 
 ## Public cible
 
@@ -60,7 +62,8 @@ Présenter le groupe, inciter les utilisateurs à réserver une date ou à achet
 
 Section Présentation :
 
-- Titre PanKart
+- Punchline aléatoire;
+- Titre PanKart;
 - Description brève;
 - Photo représentant le groupe;
 - Call to action pour réserver une date et vers l'agenda;
@@ -88,7 +91,9 @@ Section actualité "fraîche"
 ### 3. Coup de cœur
 
 **Objectif:**
+
 Partager aux utilisateurs des sujets divers montrer comment PanKart se positionne par rapport à ce sujet
+
 **Contenu :**
 
 - Liste d'articles style Twitter avec un style différent si c'est un coup de gueule ou un coup de cœur avec comme éléments:
@@ -150,7 +155,7 @@ Section Rappel des autres membres:
 - Un texte qui dit "voir aussi",
 - Liste des autres membres.
 
-### 6. Galerie
+### 7. Galerie
 
 **Objectif:**
 Montrer les différentes collections d'images du groupe aux utilisateurs.
@@ -260,6 +265,10 @@ Formulaire de contact avec comme champs à compléter:
 
 ### 1. Éléments communs
 
+**Lancement de la page :**
+
+L'utilisateur aura le droit de choisir si il veut une version totalement muette du site ou non.
+
 **Menu de navigation:**
 
 Animation au survol d'un lien, une ligne se trace en dessous comme un trait de pinceau. Cet animation sera faite à l'aide de la technique du "sprite". Ce trait de pinceau sera là en permanence pour souligner la page active. Il permettra alors de ne pas se perdre dans le site, mais aussi de rappeler l'aspect graphique de la typographie utilisée dans le logo.
@@ -313,10 +322,6 @@ Globalement identique aux actualités à la différence qu'il y aura moyen d'ép
 
 Le nom du groupe sera écrit en gros et le logo y sera présent, le texte sera ponctué d'images qui réagiront au survol, le photos bougeront légèrement grâce à une animation en JavaScript. Ça permet alors de créer une impression de superposition avec la page. Au clique, les images s'agrandiront de manière à ce qu'on puisse visualiser l'image plus clairement. Des boutons qui redirige vers Gigstarter, qui permettent d'écouter et d'acheter seront disponible, leur comportement sera identique à ceux de la page d'accueil.
 
-**Section discographie:**
-
-La discographie reprendra chaque album un à un, avec des boutons pour acheter et écouter avec un comportement identiques à ceux sur la page d'accueil. Une liste des chansons figurant sur cet album sera disposée en dessous.
-
 **Section biographie des membres:**
 
 La section sera présentée par une suite de vignettes qui s'agrandissent et décalent les autres vignettes au survol, ça permet de montrer que ces vignettes sont cliquables et aussi de donner du dynamisme au site. Une petit icône de l'instrument s'animera également au survol.
@@ -333,7 +338,15 @@ La section se présentera de la même manière que celle de la bio du groupe à 
 
 Section identique que dans la bio du groupe.
 
-### 6. Galerie
+### 6. Discographie
+
+La discographie reprendra chaque album un à un, avec des boutons pour acheter et écouter avec un comportement identiques à ceux sur la page d'accueil. Les pochettes seront animées au survol: si l'audio du site est activé, un extrait audio d'un titre soit sélectionné par PanKart, soit aléatoire se jouera.
+
+### 6.1 Discographie page dédie
+
+Il y aura des boutons d'achat et d'écoute pour l'album, ensuite, pour chaque chanson, on pourra découvrir un mot du groupe vis à vis de celle-ci. Au clique sur le lien pour en savoir plus sur cette chanson, la page descendra au titre souhaité et un texte dexpliquatif sera dispnible.
+
+### 7. Galerie
 
 **Section Album photo :**
 
