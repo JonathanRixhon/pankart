@@ -62,7 +62,9 @@ Présenter le groupe, inciter les utilisateurs à réserver une date ou à achet
 
 Section Présentation :
 
-- Punchline aléatoire;
+- Punchline aléatoire :
+  - Nom de la punchline,
+  - bouton pour jouer l'extrait si il existe.
 - Titre PanKart;
 - Description brève;
 - Photo représentant le groupe;
@@ -134,14 +136,6 @@ Section biographie des membres:
 
 - Liste des membres du groupe, avec son rôle et un lien qui dirige sur la page individuelle du membre
 
-Section discographie:
-
-- Nom de l'album,
-- Date de sortie
-- pochette de cet album,
-- texte descriptif ou pas (au choix),
-- Lien pour l'écouter
-
 ### 5.1 Page individuelle du membre
 
 Section Présentation:
@@ -155,7 +149,40 @@ Section Rappel des autres membres:
 - Un texte qui dit "voir aussi",
 - Liste des autres membres.
 
-### 7. Galerie
+### 6. Discographie
+
+**Objectif:**
+
+Faire découvrir aux utilisateurs les titres de et les albums de pankart.
+
+**Contenu:**
+
+Section discographie:
+
+- Nom de l'album,
+- Date de sortie
+- pochette de cet album,
+- texte descriptif ou pas (au choix),
+- Lien pour visualiser l'album
+
+### 6.1 Discographie page dédiée
+
+Section présentation générale:
+
+- Nom de l'album,
+- Pochette de l'album,
+- Date de sortie,
+- liste des chansons que composent l'album,
+
+Section présentation de chansons:
+
+- Le titre des chansons,
+- Lien "en savoir plus",
+- Bouton vers la page parole de la chanson
+
+Bouton retour à la discographie
+
+### 6. Galerie
 
 **Objectif:**
 Montrer les différentes collections d'images du groupe aux utilisateurs.
@@ -235,7 +262,7 @@ Formulaire de contact avec comme champs à compléter:
 - Sujet
 - Message,
 
-### 12. Boutique
+(PHASE 2 du projet)### 12. Boutique
 
 **Section marque et section album:**
 
@@ -246,13 +273,13 @@ Formulaire de contact avec comme champs à compléter:
   - Bandeau nouveauté,
   - Son prix,
 
-### 12.1 Page produit
+### 12.1 Page produit (PHASE 2 du projet)
 
 - Nom du produit,
 - Image représentant ce produit,
 - Description,
 
-### 12.2 Page produit
+### 12.2 Page d'achat (PHASE 2 du projet)
 
 - Formulaire avec comme champs:
   - Un titre,
@@ -277,12 +304,13 @@ Technique pour stocker du son identique à celle du sprite à savoir plusieurs s
 
 Le sound design se fera ici, au clique d'une page, un "Power Chord" de guitare avec de la distorsion sera joué. Pour des raisons d'accessibilité, un bouton pour couper le son sera également mis à disposition dans de menu.
 
+Vu la quantité de page distincte, un menu déroulant sera réalisé afin de regrouper les éléments similaires. Les pages "Discographie" et "Biographie" seront regroupées dans "Découvrir PanKrart".
+
 **Pied-de-page :**
 
 Au survol, les liens se démarquent par leur opacité.
 
-**Les boutons :
-**
+**Les boutons :**
 Les boutons réagissent au survol, une fois cliqué, l'aspect graphique montre qu'il s'enfonce légèrement. Cela apportera un réponse de la part de la page qui montre à l'utilisateur que le bouton peut bel et bien être cliqué. Les coins du bouton seront légèrement arrondis pour avoir un aspect moins "agressif" que les boutons parfaitement carrés.
 
 <!-- Des petites icônes seront disposées à l'intérieur de ces boutons. Elles seront animées à l'aide de JavaScript et de CSS.
@@ -380,11 +408,11 @@ Un mini-métronome sera implémenté en JavaScript, et la vitesse sera détermin
 
 Le formulaire de contact enverra un mail à PanKart sur une adresse à déterminer, le mail en question comportera l'adresse mail de l'envoyeur, le sujet et le message, le bouton envoyé se situera en dessous et les éléments seront les champs de formulaires seront centrés sur la page.
 
-### 12. Boutique
+### 12. Boutique (PHASE 2 du projet)
 
 une liste de vignette sera montrée, si on clique sur une vignette, l'utilisateur est redirigé sur la page produit.
 
-### 12.1 Page produit
+### 12.1 Page produit (PHASE 2 du projet)
 
 L'aperçu du produit est cliquable et montre le produit en plus grand, il peut y avoir plusieurs photos visionnable grâce à un système de carrousel.
 

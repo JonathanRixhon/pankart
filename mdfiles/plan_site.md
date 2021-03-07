@@ -53,7 +53,9 @@ Présenter le groupe, inciter les utilisateurs à réserver une date ou à achet
 
 Section Présentation :
 
-- Punchline aléatoire;
+- Punchline aléatoire :
+  - Nom de la punchline,
+  - bouton pour jouer l'extrait si il existe.
 - Titre PanKart;
 - Description brève;
 - Photo représentant le groupe;
@@ -251,7 +253,7 @@ Formulaire de contact avec comme champs à compléter:
 - Sujet
 - Message,
 
-### 12. Boutique
+(PHASE 2 du projet)### 12. Boutique
 
 **Section marque et section album:**
 
@@ -262,13 +264,13 @@ Formulaire de contact avec comme champs à compléter:
   - Bandeau nouveauté,
   - Son prix,
 
-### 12.1 Page produit
+### 12.1 Page produit (PHASE 2 du projet)
 
 - Nom du produit,
 - Image représentant ce produit,
 - Description,
 
-### 12.2 Page produit
+### 12.2 Page d'achat (PHASE 2 du projet)
 
 - Formulaire avec comme champs:
   - Un titre,
