@@ -141,6 +141,7 @@ Section biographie des membres:
 Section Présentation:
 
 - Nom et rôle dans le groupe;
+- Petite icone qui représente son/ses instruments;
 - Texte continu;
 - Images qui ponctuent le texte;
 
@@ -352,7 +353,7 @@ Le nom du groupe sera écrit en gros et le logo y sera présent, le texte sera p
 
 **Section biographie des membres:**
 
-La section sera présentée par une suite de vignettes qui s'agrandissent et décalent les autres vignettes au survol, ça permet de montrer que ces vignettes sont cliquables et aussi de donner du dynamisme au site. Une petit icône de l'instrument s'animera également au survol.
+La section sera présentée par une suite de vignettes qui s'agrandissent et décalent les autres vignettes au survol, ça permet de montrer que ces vignettes sont cliquables et aussi de donner du dynamisme au site. Une petit icône de l'instrument s'animera également au survol et laissera apparaître un texte qui est le nom de l'instrument.
 
 ### 5.1 Page individuelle du membre
 
