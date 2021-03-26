@@ -2,6 +2,8 @@
 
 [_Repo hepl-dw pour le projet_](https://github.com/hepl-dw/projet-pankart)
 
+> Les wireframes sont disponibles dans le dossier wireframes.
+>
 > [Notes](./mdfiles/notes.md)
 >
 > [Moodboard](https://app.milanote.com/1Ld0d51QVmEyet?p=earNjiImkQt)
