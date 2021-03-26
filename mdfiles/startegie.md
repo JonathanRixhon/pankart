@@ -1,5 +1,7 @@
 # Projet portfolio
 
+> Les wireframes sont disponibles dans le dossier wirefames.
+>
 > [Moodboard](https://app.milanote.com/1Lat5i1ryFyC93?p=U5HIO1ht63K)
 
 ## Objectifs du site
