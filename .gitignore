@@ -5,8 +5,8 @@
 /wp-content/*
 !/wp-content/themes
 /wp-content/themes/*
-!/wp-content/themes/easyspacy
-/wp-content/themes/easyspacy/public/*
+!/wp-content/themes/pankart
+/wp-content/themes/pankart/public/*
 
 #Designs
 !/design
