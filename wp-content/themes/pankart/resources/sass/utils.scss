@@ -1,0 +1,27 @@
+$black: #201d1d;
+$orange: #df8f34;
+$dark-white: #f8f8f8;
+$white: #ffffff;
+$red: #df3434;
+/* Classes et premier css */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+.sro {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+* {
+  background-color: #201d1d;
+}

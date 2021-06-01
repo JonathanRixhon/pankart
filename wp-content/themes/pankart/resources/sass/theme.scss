@@ -1,0 +1,14 @@
+@import url('./reset.scss');
+/* RESET supplementaire */
+a {
+  color: inherit;
+  text-decoration: none;
+  line-height: inherit;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+@import url('./utils.scss');
