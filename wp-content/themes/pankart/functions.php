@@ -1,5 +1,14 @@
 <?php
 /* *****
+ * link to public path
+ * *****/
+
+function pk_asset($path)
+{
+    return rtrim(get_template_directory_uri(), '/') . '/public/' . ltrim($path, '/');
+}
+
+/* *****
  * Disable the Wordpress Gutenberg Editor
  * *****/
 

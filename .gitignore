@@ -1,21 +1,21 @@
 /*
-*.DS_Store
-#Thème
-!/wp-content
-/wp-content/*
-!/wp-content/themes
-/wp-content/themes/*
-!/wp-content/themes/pankart
-/wp-content/themes/pankart/public/*
-
-#Designs
-!/design
-!/md
-!/wireframes
-
+*/.DS_Store
 #Github
 !.gitignore
 !README.md
-!package.json
-!webpack.mix.js
 
+#WP-theme
+!/wp-content
+/wp-content/*
+!/wp-content/theme
+/wp-content/theme/*
+!/wp-content/pankart
+
+#designs
+!/design
+!/mdfiles
+!/wireframes
+
+# Webpack
+!package.json
+/wp-content/theme/pankart/public/*
