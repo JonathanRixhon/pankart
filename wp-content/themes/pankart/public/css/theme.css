@@ -1,4 +1,9 @@
-html,
+@import url(https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;
+
+0,
+700;1,
+400;1,
+700&display=swap);html,
 body,
 div,
 span,
@@ -86,6 +91,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 article,
 aside,
 details,
@@ -99,55 +105,34 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-$black: #201d1d;
-$orange: #df8f34;
-$dark-white: #f8f8f8;
-$white: #ffffff;
-$red: #df3434;
-/* Classes et premier css */
-html {
-  box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-.sro {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-}
-* {
-  background-color: #201d1d;
-}
+
 /* RESET supplementaire */
 
 a {
@@ -160,5 +145,89 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+/* Classes et premier css */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.sro {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+/* mixins */
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1.125em;
+  line-height: 1.5;
+}
+
+.top {
+  background-color: #df8f34;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 100px 1040px 150px;
+  grid-template-areas: "logo menu button";
+  position: relative;
+}
+
+.top__logo {
+  display: block;
+}
+
+.top__link {
+  grid-area: logo;
+  align-self: center;
+}
+
+.top__button {
+  grid-area: button;
+}
+
+.top-nav {
+  grid-area: menu;
+}
+
+.top-nav__link {
+  padding: 1.33333333em;
+  display: block;
+}
+
+.top-nav__link_current {
+  font-weight: 700;
+}
+
+.top-nav__link:hover {
+  font-weight: 700;
+}
+
+.top-nav__list {
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.sub-nav {
+  display: none;
+}
+
+.sub-nav__title {
+  padding: 1.33333333em;
 }
 

@@ -1,0 +1,43 @@
+.top {
+  background-color: $orange;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 100px 1040px 150px;
+  grid-template-areas: 'logo menu button';
+  position: relative;
+  &__logo {
+    display: block;
+  }
+  &__link {
+    grid-area: logo;
+    align-self: center;
+  }
+  &__button {
+    grid-area: button;
+  }
+}
+
+.top-nav {
+  grid-area: menu;
+  &__link {
+    &_current {
+      font-weight: 700;
+    }
+    &:hover {
+      font-weight: 700;
+    }
+    padding: 1.33333333em;
+    display: block;
+  }
+  &__list {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    display: flex;
+  }
+}
+.sub-nav {
+  display: none;
+  &__title {
+    padding: 1.33333333em;
+  }
+}

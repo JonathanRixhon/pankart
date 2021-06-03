@@ -10,13 +10,33 @@
 
     <?php wp_head(); ?>
 </head>
-<header>
-    <h1>Pankart</h1>
-    <nav>
-        <ul>
-            <li><a href="#">Liens dans le site</a></li>
-            <li><a href="#">Liens dans le site</a></li>
-            <li><a href="#">Liens dans le site</a></li>
-        </ul>
-    </nav>
-</header>
+
+<body>
+    <header class="top">
+        <h1 class="top__title sro">Pankart</h1>
+        <a href="<?= get_home_url() ?>" class="top__link">
+            <img class="top__logo" src="<?= pk_asset('img/logo_x1.png') ?>" srcset="<?= pk_asset('img/logo_x1.png') ?> 1x, <?= pk_asset('img/logo_x2.png') ?> 2x" alt="Logo du groupe Pankart">
+        </a>
+        <nav class="top-nav">
+            <h2 class="sro">Navigation principale</h2>
+            <ul class="top-nav__list">
+                <?php foreach (pk_menu('main') as $link) : ?>
+                    <li class="top-nav__item">
+                        <a class="top-nav__link <?= pk_bem('top-nav__link', $link->modifiers); ?>" href="<?= $link->url; ?>"><?= $link->label; ?></a>
+                    </li>
+                <?php endforeach; ?>
+
+                <li class="top-nav__item top-nav__item_about">
+                    <h3 class="sub-nav__title">À Propos</h3>
+                    <ul class="sub-nav">
+                        <?php foreach (pk_menu('about') as $link) : ?>
+                            <li class="sub-nav__item">
+                                <a class="sub-nav__link" <?= pk_bem('sub-nav__link', $link->modifiers); ?>" href="<?= $link->url; ?>"><?= $link->label; ?></a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <button class="top__button">Couper le son du site</button>
+    </header>
