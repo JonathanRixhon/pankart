@@ -223,10 +223,6 @@ body {
   display: flex;
 }
 
-.sub-nav {
-  display: none;
-}
-
 .sub-nav__title {
   padding: 1.33333333em;
 }

@@ -15,7 +15,7 @@
             <?php endforeach; ?>
     </nav>
     <nav class="bot-about-nav">
-        <h3 class="bot-about-nav__title">Á propos</h3>
+        <h3 class="bot-about-nav__title">À propos</h3>
         <ul class="bot-about-nav__list">
             <?php foreach (pk_menu('about') as $link) : ?>
                 <li class="bot-about-nav__item">

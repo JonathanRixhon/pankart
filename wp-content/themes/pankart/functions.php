@@ -176,6 +176,21 @@ function pk_custom_post_type()
         'menu_icon' => 'dashicons-format-chat',
         'supports' => ['title', 'editor', 'thumbnail'],
     ]);
+
+    /* COUP DE GUEULE */
+    register_post_type('members', [
+        'label' => 'Membres',
+        'labels' => [
+            'singular_name' => 'Membre',
+            'add_new_item' => 'Ajouter un membre',
+            'add_new' => 'Ajouter membre',
+        ],
+        'description' => 'Tous les membres',
+        'public' => true,
+        'menu_position' => 9,
+        'menu_icon' => 'dashicons-admin-users',
+        'supports' => ['title', 'thumbnail'],
+    ]);
 }
 
 /* *****
@@ -217,6 +232,7 @@ function pk_add_theme_supports()
     add_theme_support('post-thumbnails', ['post', 'album']);
     add_theme_support('post-thumbnails', ['post', 'song']);
     add_theme_support('post-thumbnails', ['post', 'cdg']);
+    add_theme_support('post-thumbnails', ['post', 'members']);
 }
 
 
@@ -275,4 +291,23 @@ function pk_create_image_array()
         };
     }
     return $imageNames;
+}
+function pk_antecedent()
+{
+    $data = get_fields();
+    $content = [];
+    foreach ($data as $key => $value) {
+        if (preg_match('/^prev-/', $key)) {
+            $value = explode(':', $value);
+            $value["style"] = trim($value[0]);
+            $bands = explode(',', $value[1]);
+            foreach ($bands as $band => $name) {
+                $name = trim($name);
+                $value['bands'][] = $name;
+            }
+            array_splice($value, 0, 2);
+            $content[] = $value;
+        }
+    }
+    return $content;
 }
