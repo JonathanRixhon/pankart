@@ -19,7 +19,7 @@ $firstAlbum = new WP_Query(array(
 $firstAlbumDate = intval(date('Y', strtotime(get_field('date-out', $firstAlbum->posts[0]))));
 $thisYear = intval(date('Y'));
 $postsSorted = [];
-for ($date = $firstAlbumDate; $date <= intval(date('Y')); $date++) {
+for ($date = intval(date('Y')); $date >= $firstAlbumDate; $date--) {
     foreach ($albums->posts as $album) {
         if ($date === intval(date('Y', strtotime(get_field('date-out', $album))))) {
             $postsSorted[$date][] = $album;
