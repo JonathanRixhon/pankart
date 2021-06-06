@@ -55,7 +55,7 @@ if (count(pk_antecedent())) {
         <a href="#">Facebook</a>
     </section>
 
-    <section>
+    <section id="contact-form">
         <h4>Nous contacter</h4>
         <img src="" alt="img du logo du groupe">
         <?php get_template_part('template-parts/contact-form', null) ?>

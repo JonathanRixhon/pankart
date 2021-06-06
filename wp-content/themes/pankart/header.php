@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= is_front_page() ? bloginfo('description') : bloginfo('description') . wp_title("•", false); ?></title>
     <link rel="stylesheet" href="<?= pk_asset("css/theme.css") ?>">
-
     <?php wp_head(); ?>
 </head>
 
@@ -27,7 +26,7 @@
                 <?php endforeach; ?>
 
                 <li class="top-nav__item top-nav__item_about">
-                    <h3 class="sub-nav__title">À Propos</h3>
+                    <h3 class="top-nav__sub-title">À Propos</h3>
                     <ul class="sub-nav">
                         <?php foreach (pk_menu('about') as $link) : ?>
                             <li class="sub-nav__item">
@@ -35,6 +34,11 @@
                             </li>
                         <?php endforeach; ?>
                     </ul>
+                </li>
+                <li class="top-nav__item">
+                    <a class="top-nav__link <?= pk_bem('top-nav__link', $link->modifiers); ?>" href="<?= get_permalink(23) ?>/#contact-form">
+                        Contact
+                    </a>
                 </li>
             </ul>
         </nav>

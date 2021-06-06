@@ -221,6 +221,9 @@ function pk_image_sizes()
     add_image_size('album-cover', 270, 270, true);
     //news img
     add_image_size('new-img', 270, 270, true);
+    //news img
+    add_image_size('home-img', 720, 850, true);
+    add_image_size('home-img-large', 1440, 1700, true);
 }
 /* *****
 * Enable thumbnails support
@@ -228,11 +231,12 @@ function pk_image_sizes()
 add_action("after_setup_theme", "pk_add_theme_supports");
 function pk_add_theme_supports()
 {
-    add_theme_support('post-thumbnails', ['post', 'news']);
+    add_theme_support('post-thumbnails', ['post', 'members']);
     add_theme_support('post-thumbnails', ['post', 'album']);
+    add_theme_support('post-thumbnails', ['post', 'news']);
+    add_theme_support('post-thumbnails', ['post', 'date']);
     add_theme_support('post-thumbnails', ['post', 'song']);
     add_theme_support('post-thumbnails', ['post', 'cdg']);
-    add_theme_support('post-thumbnails', ['post', 'members']);
 }
 
 
@@ -273,7 +277,7 @@ function pk_news_img_attributes($sizes = [], $img)
     // 1. Récupérer le thumbnail pour le post courant dans the loop
     $src = $img['url'];
     $alt = $img['alt'];
-    $srcset = [];
+    $srcset = $img['size'][$sizes[0]];
     // 2. Récupérer les tailles d'image qui nous intéressent & formater les tailles pour qu'elles soient utilisables dans srcset
     foreach ($sizes as $size) {
         $srcset[] = $img['sizes'][$size] . " " . $img['sizes'][$size . "-width"] . "w";

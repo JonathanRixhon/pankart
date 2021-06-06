@@ -26,18 +26,19 @@ $lastsong = new WP_Query([
     'orderby' => 'date',
     'order' => 'desc'
 ]);
+wp_reset_query();
 ?>
 <main class="home-page">
     <section class="presentation">
-        <h2 class="presantation__title">
+        <h2 class="presentation__title">
             <span class="pankart">Pankart</span>
         </h2>
-        <p class="presantation__text">
-            <?= get_the_content() ?>
+        <p class="presentation__text">
+            <?= get_post_field('post_content', 5); ?>
         </p>
-        <a class="presantation__link presantation_book" href="">Réserver le groupe</a>
-        <a class="presantation__link presantation_agenda" href="">Voir l'agenda</a>
-        <img src="" alt="Photo du groupe">
+        <a class="presentation__link presentation__link_book" href="">Réserver le groupe</a>
+        <a class="presentation__link presentation__link_agenda" href="">Voir l'agenda</a>
+        <img class="presentation__img" <?= pk_news_img_attributes(["home-img"], get_field('img')) ?> sizes=" 50vw">
     </section>
     <section class="home-news">
         <h2 class="home-news__title">
@@ -55,14 +56,14 @@ $lastsong = new WP_Query([
         <?php if ($nextEvent->have_posts()) : while ($nextEvent->have_posts()) : $nextEvent->the_post(); ?>
                 <article class="last-date">
                     <h3 class="last-date__title"><?php the_title() ?></h3>
-                    <p><time datetime="<?= get_field('event-date') ?>">coucou</time></p>
-                    <a href="<?= get_field('event-link') ?>">Vers le site de l'évènement</a>
+                    <p class="last-date__date"><time datetime="<?= get_field('event-date') ?>">Le <?= get_field('event-date') ?></time></p>
+                    <a class="last-date__link" href="<?= get_field('event-link') ?>">Vers le site de l'évènement</a>
                 </article>
+                <img class="next-date__img" <?= pk_the_thumbnail_attributes(['home-img']) ?>>
             <?php endwhile; ?>
         <?php else : ?>
             <p class="next-date__empty-message">Il n'y a pas de évènement prévu pour l'instant.</p>
         <?php endif; ?>
-        <?php the_date() ?>
     </section>
     <section class="last-song">
         <h2 class="last-song__title">Dernier titre</h2>

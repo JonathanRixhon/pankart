@@ -1,0 +1,210 @@
+.presentation {
+  color: $orange;
+  background-color: $black;
+  overflow: hidden;
+  display: grid;
+  grid-template-areas:
+    '. . . img'
+    '. title title img'
+    '. content content img'
+    '. book agenda img'
+    '. . . img';
+  grid-template-columns: minmax(150px, 10.41666667%) 1fr 1fr min-content;
+  grid-template-rows: repeat(5, auto);
+  grid-gap: $gap;
+  margin-bottom: 2.77777778em;
+  &__title {
+    grid-area: title;
+  }
+  &__text {
+    grid-area: content;
+  }
+  &__img {
+    grid-area: img;
+    clip-path: polygon(14.09722222% 0, 100% 0, 100% 100%, 0% 100%);
+    object-fit: cover;
+    object-position: center;
+  }
+  &__link {
+    @include big-buttons;
+    &_book {
+      grid-area: book;
+      background-color: $orange;
+      color: $black;
+    }
+    &_agenda {
+      border: 2px solid $orange;
+      grid-area: agenda;
+    }
+  }
+}
+.home-news {
+  width: $width-fixed;
+  max-width: $width-fixed-px;
+  margin: 0 auto 7.77777778em;
+  &__title {
+    font-size: $font-size-heading-sec;
+    margin-bottom: 1em;
+  }
+}
+.np {
+  display: flex;
+  flex-direction: column;
+  max-width: 754px;
+  width: 52.36111111%;
+  margin: 0 auto;
+  position: relative;
+  &:hover {
+    .np__fake-link {
+      font-weight: 700;
+    }
+  }
+  &__thumbnail {
+    order: -1;
+    border-radius: 0.55555556em;
+    margin-bottom: $gap;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: $font-size-heading-third;
+    line-height: 1;
+  }
+  &__fake-link {
+    text-align: right;
+    text-decoration: underline;
+  }
+  &__link {
+    @include absolute-value(0, 0, 0, 0);
+    z-index: 1;
+    display: block;
+    position: absolute;
+  }
+}
+.np-informations {
+  &__date {
+    font-size: $font-size-small;
+    margin-bottom: 0.71428571em;
+  }
+}
+
+.next-date {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, auto);
+  overflow: hidden;
+  margin-bottom: 3.33333333em;
+  &__img {
+    grid-column: 1;
+    grid-row: 1/-1;
+    max-width: 100%;
+    height: auto;
+  }
+  &__title {
+    grid-row: 2;
+    font-size: $font-size-heading-sec;
+    max-width: 365px;
+    width: 32.823741%;
+    margin: 0 auto 1em;
+  }
+  background-color: $black;
+  color: $orange;
+  clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%);
+}
+.last-date {
+  grid-row: 3;
+  width: 32.823741%;
+  max-width: 365px;
+  margin: 0 auto;
+  &__title {
+    font-size: $font-size-heading-third;
+    font-weight: 700;
+    line-height: 1;
+  }
+  &__date {
+    margin-bottom: 2.55555556em;
+  }
+  &__link {
+    @include big-buttons;
+    border-radius: 0.27777778em;
+    background-color: $orange;
+    color: $black;
+    display: block;
+    width: 100%;
+  }
+}
+
+.last-song {
+  &__title {
+    font-size: $font-size-heading-sec;
+    width: $width-fixed;
+    max-width: $width-fixed-px;
+    margin: 0 auto;
+    line-height: 1;
+  }
+}
+.song-album {
+  display: flex;
+  width: $width-fixed;
+  max-width: $width-fixed-px;
+  margin: 0 auto;
+  margin-bottom: 2.22222222em;
+}
+.ls {
+  width: 23.33333333%;
+  max-width: 336px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  &__title {
+    font-size: $font-size-heading-third;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 0.71428571em;
+  }
+  &__album-cover {
+    border-radius: 0.55555556em;
+    margin-bottom: 1.66666667em;
+  }
+  margin-bottom: 7em;
+}
+.ls-nav {
+  position: relative;
+  margin-bottom: 0.55555556em;
+  &__button {
+    width: 100%;
+    @include big-buttons;
+    background-color: $orange;
+    color: $black;
+  }
+  &__list {
+    transform-origin: center left;
+    transform: scale(0, 0);
+    position: absolute;
+    background-color: $black;
+    color: $orange;
+    width: 100%;
+    right: calc(-100% - 8px);
+    top: 0;
+    border-radius: 0.27777778em;
+    text-align: center;
+    &::after {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: calc(1em / 2 + 0.61111111em / 2);
+      width: 0;
+      height: 0;
+      border: 8px solid transparent;
+      border-right-color: $black;
+      border-left: 0;
+    }
+  }
+  &__item {
+    padding: 0.61111111em 0;
+  }
+}
+.ls-nav_buy:hover {
+  &.ls-nav__list {
+    transform: scale(0, 0);
+  }
+}

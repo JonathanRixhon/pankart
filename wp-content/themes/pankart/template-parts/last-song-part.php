@@ -6,10 +6,10 @@
             <?= get_the_title($album) ?>
         </dd>
     </dl>
-    <article class="last-song">
-        <h3 class="last-song__title"><?php the_title() ?></h3>
+    <article class="ls">
+        <h3 class="ls__title"><?php the_title() ?></h3>
         <?php if (has_post_thumbnail() || has_post_thumbnail($album)) : ?>
-            <img class="last-song__album-cover" <?= has_post_thumbnail() ? pk_the_thumbnail_attributes(['album-cover']) : pk_the_thumbnail_attributes(['album-cover'], $album) ?>>
+            <img class="ls__album-cover" <?= has_post_thumbnail() ? pk_the_thumbnail_attributes(['album-cover']) : pk_the_thumbnail_attributes(['album-cover'], $album) ?>>
         <?php endif; ?>
         <?php if (pk_sort_links(get_fields($album), 'listen')) : ?>
             <nav class="ls-nav ls-nav_listen">
@@ -30,7 +30,7 @@
             <nav class="ls-nav ls-nav_buy">
                 <h4 class="ls-nav__title sro">Liste des sites sur lesquels vous pouvez écouter le titre</h4>
                 <button class="ls-nav__button">
-                    Écouter l'album à fond !
+                    Acheter l'album
                 </button>
                 <ul class="ls-nav__list">
                     <?php foreach (pk_sort_links(get_fields($album), 'buy') as $link) : ?>
@@ -44,9 +44,9 @@
     </article>
 <?php else : ?>
     <article>
-        <h3 class="last-song__title"><?php the_title() ?></h3>
+        <h3 class="ls__title"><?php the_title() ?></h3>
         <?php if (has_post_thumbnail() || has_post_thumbnail($album)) : ?>
-            <img class="last-song__album-cover" <?= pk_the_thumbnail_attributes(['album-cover']) ?>>
+            <img class="ls__album-cover" <?= pk_the_thumbnail_attributes(['album-cover']) ?>>
         <?php endif; ?>
         <?php if (pk_sort_links(get_fields(), 'listen')) : ?>
             <nav class="ls-nav ls-nav_listen">
