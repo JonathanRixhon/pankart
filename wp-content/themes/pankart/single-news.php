@@ -28,7 +28,7 @@ $figcaption = get_field('legend'); ?>
         </ul>
     </section>
 
-    <section class="new-descritpion">
+    <section class="new-description">
         <h3 class="new-content__title sro">Description de l'article</h3>
         <p class="new-description__content">
             <?= get_field('description') ?>
@@ -38,9 +38,9 @@ $figcaption = get_field('legend'); ?>
     <section class="new-content">
         <h3 class="new-content__title sro">Contenu de l'article</h3>
         <?php if (count($imgArr)) : ?>
-            <figure class="new-content__img-wrapper">
-                <?php foreach ($imgArr as $img) : ?>
-                    <img class="new-content__img" <?= pk_news_img_attributes(['new-img'], get_field($img)) ?> sizes="754px">
+            <figure class="new-content__img-wrapper new-content__img-wrapper_<?= count($imgArr) ?>">
+                <?php foreach ($imgArr as $key => $img) : ?>
+                    <img class="new-content__img new-content__img_<?= $key ?>" <?= pk_news_img_attributes(['new-img'], get_field($img)) ?> sizes="754px">
                 <?php endforeach; ?>
 
                 <?php if (get_field('legend')) : ?>

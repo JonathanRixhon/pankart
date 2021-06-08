@@ -3,15 +3,8 @@
   background-color: $black;
   overflow: hidden;
   display: grid;
-  grid-template-areas:
-    '. . . img'
-    '. title title img'
-    '. content content img'
-    '. book agenda img'
-    '. . . img';
-  grid-template-columns: minmax(150px, 10.41666667%) 1fr 1fr min-content;
-  grid-template-rows: repeat(5, auto);
   grid-gap: $gap;
+
   margin-bottom: 2.77777778em;
   &__title {
     grid-area: title;
@@ -46,44 +39,8 @@
     font-size: $font-size-heading-sec;
     margin-bottom: 1em;
   }
-}
-.np {
-  display: flex;
-  flex-direction: column;
-  max-width: 754px;
-  width: 52.36111111%;
-  margin: 0 auto;
-  position: relative;
-  &:hover {
-    .np__fake-link {
-      font-weight: 700;
-    }
-  }
-  &__thumbnail {
-    order: -1;
-    border-radius: 0.55555556em;
-    margin-bottom: $gap;
-  }
-  &__title {
-    font-weight: 700;
-    font-size: $font-size-heading-third;
-    line-height: 1;
-  }
-  &__fake-link {
-    text-align: right;
-    text-decoration: underline;
-  }
-  &__link {
-    @include absolute-value(0, 0, 0, 0);
-    z-index: 1;
-    display: block;
-    position: absolute;
-  }
-}
-.np-informations {
-  &__date {
-    font-size: $font-size-small;
-    margin-bottom: 0.71428571em;
+  .np {
+    @include news-layout(754px);
   }
 }
 
@@ -134,23 +91,22 @@
 }
 
 .last-song {
+  width: $width-fixed;
+  max-width: $width-fixed-px;
+  margin: 0 auto;
   &__title {
     font-size: $font-size-heading-sec;
-    width: $width-fixed;
-    max-width: $width-fixed-px;
+
     margin: 0 auto;
     line-height: 1;
   }
 }
 .song-album {
   display: flex;
-  width: $width-fixed;
-  max-width: $width-fixed-px;
   margin: 0 auto;
   margin-bottom: 2.22222222em;
 }
 .ls {
-  width: 23.33333333%;
   max-width: 336px;
   display: flex;
   flex-direction: column;
@@ -178,7 +134,6 @@
   }
   &__list {
     transform-origin: center left;
-    transform: scale(0, 0);
     position: absolute;
     background-color: $black;
     color: $orange;
@@ -202,9 +157,35 @@
   &__item {
     padding: 0.61111111em 0;
   }
-}
-.ls-nav_buy:hover {
-  &.ls-nav__list {
-    transform: scale(0, 0);
+  &__item {
+    @include icon-inline-block;
+    &_spotify {
+      //@include icon-inline-block;
+      &::before {
+        @include sprite-fct(25px, 25px, -400px, 0px, transparent);
+      }
+    }
+    &_deezer {
+      &::before {
+        @include sprite-fct(25px, 25px, -320px, 0px, transparent);
+      }
+    }
+    &_apple_music {
+      &::before {
+        @include sprite-fct(25px, 25px, -160px, -80px, transparent);
+      }
+    }
+    &_youtube_music {
+      &::before {
+        @include sprite-fct(25px, 25px, -480px, -80px, transparent);
+      }
+    }
+    &_fnac {
+      &::before {
+        vertical-align: middle;
+        @include sprite-fct(25px, 8px, -480px, 0px, transparent);
+      }
+    }
   }
 }
+@import './media/home-media.scss';

@@ -1,0 +1,41 @@
+/* 
+wp_ulike_general_class
+wp_ulike_is_already_liked
+wp_ulike_click_is_disabled 
+wp_ulike_btn_is_active 
+*/
+.wpulike {
+  background-color: brown;
+}
+.wp_ulike_general_class {
+  margin: 0 auto;
+  width: auto;
+}
+
+.wp_ulike_btn {
+  background-color: $orange;
+  border: 2px solid $black;
+  margin: 0 auto;
+  border-radius: 0.55555556em;
+  padding: 0.55555556em 1.38888889em;
+  @include icon-inline-block;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  &:hover {
+    transform: rotate(4deg) /* scale(1.05, 1.05) */;
+  }
+  &::before {
+    @include sprite-fct(24px, 40px, -80px, -80px, transparent);
+  }
+}
+.wp_ulike_is_already_liked,
+.wp_ulike_click_is_disabled {
+  .wp_ulike_btn,
+  .wp_ulike_btn_is_active {
+    background-color: $black;
+    transform: rotate(4deg) /* scale(1.05, 1.05) */;
+    &::before {
+      @include sprite-fct(24px, 40px, -80px, -160px, transparent);
+    }
+  }
+}

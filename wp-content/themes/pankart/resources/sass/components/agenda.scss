@@ -1,0 +1,63 @@
+.agenda-page {
+  width: $width-fixed;
+  max-width: $width-fixed-px;
+  margin: 0 auto;
+  &__title {
+    font-size: $font-size-heading;
+    font-weight: 700;
+    margin: 1.13636364em 0 0.90909091em;
+  }
+}
+.date-elt {
+  background-color: $black;
+  color: $white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.77777778em;
+  margin-bottom: 1.66666667em;
+  border-radius: 0.55555556em;
+  position: relative;
+  &__title {
+    font-size: $font-size-heading-third;
+    font-weight: 700;
+    text-align: center;
+    width: 29.38596491%;
+  }
+  &__fake-link {
+    &_sold-out {
+      position: relative;
+      &::after {
+        content: 'Sold out';
+        text-transform: uppercase;
+        display: block;
+        width: 108%;
+        left: -4%;
+        top: 0;
+        position: absolute;
+        background-color: $red;
+        color: $white;
+        font-weight: 700;
+        @include big-buttons;
+        border-radius: 0;
+        transform: rotate(-3deg);
+      }
+    }
+    @include big-buttons;
+    background-color: $orange;
+    color: $black;
+    width: 26.40350877%;
+  }
+  &__link {
+    position: absolute;
+    @include absolute-value(0, 0, 0, 0);
+    z-index: 2;
+  }
+}
+.date-content {
+  height: auto;
+
+  &__date {
+    text-align: center;
+  }
+}

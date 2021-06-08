@@ -1,0 +1,33 @@
+@media (min-width: 1011px) {
+  .presentation {
+    grid-template-areas:
+      '. . . img'
+      '. title title img'
+      '. content content img'
+      '. book agenda img'
+      '. . . img';
+    grid-template-columns: minmax(150px, 10.41666667%) 1fr 1fr min-content;
+    grid-template-rows: repeat(5, auto);
+
+    grid-gap: $gap;
+  }
+}
+
+@media (max-width: 900px) {
+  .next-date {
+    display: block;
+    padding: 2em 0;
+    &__img {
+      display: none;
+    }
+  }
+}
+@media (max-width: 480px) {
+  .presentation {
+    grid-template-areas:
+      'title title'
+      'content content'
+      'book book'
+      'agenda agenda';
+  }
+}

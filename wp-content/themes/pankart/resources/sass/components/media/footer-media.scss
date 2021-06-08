@@ -1,0 +1,12 @@
+@media (max-width: 1000px) {
+  .bottom {
+    flex-direction: column;
+    align-items: center;
+    &__link {
+      margin-bottom: 1.5em;
+    }
+  }
+  nav {
+    margin-bottom: 1.5em;
+  }
+}

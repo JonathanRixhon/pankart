@@ -1,0 +1,25 @@
+.bottom {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em 0;
+  background-color: $black;
+  color: $orange;
+  nav {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 224px;
+      li {
+        margin-right: 1em;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    h3 {
+      font-weight: 700;
+      margin-bottom: 0.6em;
+    }
+  }
+}
+@import './media/footer-media.scss';

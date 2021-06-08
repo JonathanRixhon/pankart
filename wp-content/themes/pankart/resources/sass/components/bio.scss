@@ -1,0 +1,20 @@
+.bio-content {
+  width: $width-fixed;
+  max-width: $width-fixed-px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.img-about {
+  width: 100%;
+}
+.grp-title-group {
+  grid-column: span 2;
+  &__title {
+    &_title {
+      font-size: $font-size-heading;
+    }
+    &_sub-title {
+      font-size: $font-size-heading-sec;
+    }
+  }
+}

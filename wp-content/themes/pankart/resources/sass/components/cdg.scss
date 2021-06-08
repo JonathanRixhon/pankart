@@ -1,0 +1,42 @@
+.cdg-page {
+  width: $width-fixed;
+  max-width: $width-fixed-px;
+  margin: 0 auto;
+  &__title {
+    font-size: $font-size-heading;
+    font-weight: 700;
+  }
+}
+.cdg-preview {
+  width: 86.49122807%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1.66666667em;
+  background-color: $white;
+  margin-bottom: 1.66666667em;
+  border-radius: 0.55555556em;
+  position: relative;
+  &__thumbnail {
+    border-radius: 0.55555556em;
+    max-height: 367px;
+    object-position: center;
+    object-fit: cover;
+    order: 1;
+  }
+  &__title {
+    font-size: $font-size-heading-third;
+    font-weight: 700;
+  }
+  &__content {
+    margin-bottom: 2.5em;
+  }
+}
+.cdg-informations {
+  margin-bottom: 0.55555556em;
+}
+.wp_ulike_general_class {
+  position: absolute;
+  right: 1.66666667em;
+  top: 1.66666667em;
+}

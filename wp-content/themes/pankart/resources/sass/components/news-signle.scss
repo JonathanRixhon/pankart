@@ -1,0 +1,151 @@
+.sg-new-page {
+  width: $width-fixed;
+  max-width: $width-fixed-px;
+  margin: 0 auto;
+  display: grid;
+  min-height: 75vh;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: min-content;
+  grid-gap: $gap;
+  padding: 2.77777778em 0;
+  &__title {
+    font-size: $font-size-heading;
+    font-weight: 700;
+    margin-bottom: 0.90909091em;
+  }
+}
+.sg-new-interaction {
+  grid-column: span 4 / -1;
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__item {
+    width: 47.126437%;
+    position: relative;
+  }
+  &__button {
+    @include big-buttons;
+    background-color: $orange;
+    color: $black;
+    width: 100%;
+    &_share {
+      @include icon-inline-block(-4px);
+      vertical-align: middle;
+      &::before {
+        @include sprite-fct(23px, 20px, -240px, 0px, transparent);
+      }
+    }
+    &_copy {
+      @include icon-inline-block;
+      vertical-align: middle;
+      &::before {
+        @include sprite-fct(21px, 26px, -640px, 0px, transparent);
+      }
+    }
+  }
+}
+.interaction-sub-list {
+  position: absolute;
+  top: calc(3.071428572em + 10px);
+  width: 100%;
+  background-color: $black;
+  color: $orange;
+  border-radius: 0.27777778em;
+  font-size: $font-size-small;
+  text-align: center;
+  padding: 0.5em 0;
+  &__item {
+    padding: 0.5em;
+    &:hover {
+      font-weight: 700;
+    }
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    left: calc(50% - 15px);
+    top: -10px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 10px solid $black;
+  }
+}
+
+.new-content {
+  grid-column: 3 / span 8;
+  p {
+    width: 74.27055703%;
+    margin: 0 auto $gap;
+  }
+  &__legend {
+    text-align: center;
+    grid-area: legend;
+  }
+  &__img-wrapper {
+    display: grid;
+
+    &_1 {
+      grid-template-areas:
+        'img0 img0'
+        'img0 img0'
+        'legend legend';
+    }
+    &_2 {
+      grid-template-areas:
+        'img0 img0'
+        'img1 img1'
+        'legend legend';
+    }
+    &_3 {
+      grid-template-areas:
+        'img0 img2'
+        'img1 img2'
+        'legend legend';
+    }
+    &_4 {
+      grid-template-areas:
+        'img0 img1'
+        'img2 img3'
+        'legend legend';
+    }
+    grid-template-rows: repeat(2, minmax(auto, 345px));
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $gap;
+    margin-bottom: $gap;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    &_0 {
+      grid-area: img0;
+    }
+    &_1 {
+      grid-area: img1;
+    }
+    &_2 {
+      grid-area: img2;
+    }
+    &_3 {
+      grid-area: img3;
+    }
+  }
+}
+.new-description {
+  grid-column: 3 / span 8;
+  &__content {
+    width: 74.27055703%;
+    margin: 0 auto;
+  }
+}
+.sg-new-page__back-link {
+  @include big-buttons;
+  grid-column: span 3/-1;
+  background-color: $orange;
+  color: $black;
+}

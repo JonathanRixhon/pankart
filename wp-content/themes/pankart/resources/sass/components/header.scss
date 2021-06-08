@@ -2,7 +2,7 @@
   background-color: $orange;
   display: grid;
   justify-content: center;
-  grid-template-columns: 100px 1040px 150px;
+  grid-template-columns: auto minmax(auto, 1043px) 60px;
   grid-template-areas: 'logo menu button';
   position: relative;
   &__logo {
@@ -11,6 +11,7 @@
   &__link {
     grid-area: logo;
     align-self: center;
+    margin-left: 10%;
   }
   &__button {
     grid-area: button;
@@ -54,35 +55,8 @@
   }
 }
 
-.top-nav__item_about:hover,
-.top-nav__item_about:focus-within {
-  .sub-nav {
-    transform: translateX(-50%) scale(1, 1);
-    opacity: 1;
-  }
-}
-.sub-nav {
-  position: absolute;
-  background-color: $orange;
-  transition: all 0.25s ease-in-out;
-  transform-origin: top center;
-  transform: translateX(-50%) scale(1, 0);
-  opacity: 0;
-  min-width: 120%;
-  left: 50%;
-  z-index: 1;
-  &__item {
-    text-align: center;
-    &:hover {
-      font-weight: 700;
-    }
-  }
-  &__link {
-    padding: 1.33333333em 0;
-    display: block;
-  }
-}
-
 footer {
   background-color: $orange;
 }
+
+@import './media/header-media.scss';

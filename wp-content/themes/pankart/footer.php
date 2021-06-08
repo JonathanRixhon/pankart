@@ -1,9 +1,8 @@
-</body>
 <footer class="bottom">
     <?php wp_footer(); ?>
     <h2 class="bottom__title sro">Pied de page</h2>
-    <a href="<?php get_home_url() ?>" class="top__link">
-        <img class="top__logo" src="" srcset="" alt="Logo du groupe Pankart">
+    <a href="<?= get_home_url() ?>" class="bottom__link">
+        <img class="bottom__logo" src="<?= pk_asset('img/logo_x1.png') ?>" srcset="<?= pk_asset('img/logo_x1.png') ?> 1x, <?= pk_asset('img/logo_x2.png') ?> 2x" alt="Logo du groupe Pankart">
     </a>
     <nav class="bot-main-nav">
         <h3 class="bot-main-nav__title">Navigation principale</h3>
@@ -32,6 +31,9 @@
                 </li>
             <?php endforeach; ?>
     </nav>
+
 </footer>
+<script src="<?= pk_asset('js/app.js') ?>"></script>
+</body>
 
 </html>

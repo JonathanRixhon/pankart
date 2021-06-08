@@ -6,6 +6,7 @@ $lastNew = new WP_Query([
     'orderby' => 'date',
     'order' => 'desc'
 ]);
+wp_reset_query();
 
 $nextEvent = new WP_Query([
     'post_type' => 'date',
@@ -13,6 +14,7 @@ $nextEvent = new WP_Query([
     'orderby' => 'date',
     'order' => 'asc'
 ]);
+wp_reset_query();
 
 $lastsong = new WP_Query([
     'meta_query' => [
@@ -28,6 +30,7 @@ $lastsong = new WP_Query([
 ]);
 wp_reset_query();
 ?>
+
 <main class="home-page">
     <section class="presentation">
         <h2 class="presentation__title">
@@ -38,7 +41,7 @@ wp_reset_query();
         </p>
         <a class="presentation__link presentation__link_book" href="">Réserver le groupe</a>
         <a class="presentation__link presentation__link_agenda" href="">Voir l'agenda</a>
-        <img class="presentation__img" <?= pk_news_img_attributes(["home-img"], get_field('img')) ?> sizes=" 50vw">
+        <img class="presentation__img" <?= pk_news_img_attributes(["home-img"], get_field('img', 5)) ?> sizes=" 50vw">
     </section>
     <section class="home-news">
         <h2 class="home-news__title">

@@ -1,0 +1,10 @@
+.likebtn-wrapper {
+  @include font-lato;
+  * {
+    padding: 0;
+    margin: 0;
+  }
+}
+.lb-count.lb-hidden {
+  display: none;
+}

@@ -289,7 +289,7 @@ function pk_create_image_array()
 {
     $nbr = 4;
     $imageNames = [];
-    for ($i = 1; $i <= $nbr; $i++) {
+    for ($i = 0; $i <= $nbr; $i++) {
         if (get_field('image' . $i)) {
             $imageNames[] = 'image' . $i;
         };
