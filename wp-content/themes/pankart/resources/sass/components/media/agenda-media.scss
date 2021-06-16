@@ -1,0 +1,22 @@
+@media (max-width: 1080px) {
+  .date-elt {
+    flex-direction: column;
+    &__fake-link {
+      width: 55%;
+    }
+    &__title {
+      width: 100%;
+    }
+  }
+  .date-content {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+}
+@media (max-width: 480px) {
+  .date-elt {
+    &__fake-link {
+      width: 90%;
+    }
+  }
+}

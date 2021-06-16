@@ -1,0 +1,73 @@
+@media (min-width: 1440px) {
+  .sg-song {
+    grid-template-columns: 1fr 76px 868px 1fr;
+  }
+  .sg-album-intro {
+    grid-template-columns: 10.41666667% 753px 117px 270px 10.41666667%;
+  }
+}
+
+@media (max-width: 1020px) {
+  .sg-album-intro {
+    &__thumbnail {
+      grid-column: 2/-2;
+      grid-row: auto;
+      margin: 0 auto;
+      order: 1;
+    }
+    &__title {
+      grid-column: 2/-2;
+    }
+    &__content {
+      grid-column: 2/-2;
+    }
+  }
+  .sg-album-date {
+    grid-column: 2/-2;
+  }
+}
+@media (max-width: 750px) {
+  .sg-album__back-link {
+    margin: 0 auto;
+    width: 80%;
+  }
+}
+@media (max-width: 850px) {
+  .album {
+    width: 80%;
+    max-height: none;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr auto;
+    &-nbr {
+      grid-column: 2;
+    }
+    &__title {
+      grid-column: 2;
+      align-self: end;
+    }
+    &__cover {
+      grid-column: 1;
+      grid-row: 1/-1;
+    }
+    &__link {
+      grid-column: 2;
+      grid-row: 3;
+    }
+    &__description {
+      @include screen-only;
+    }
+  }
+}
+@media (max-width: 530px) {
+  .album {
+    grid-template-columns: 1fr 1fr;
+
+    &__link {
+      grid-column: 1/-1;
+      grid-row: 3;
+    }
+    &__cover {
+      grid-row: 1/3;
+    }
+  }
+}

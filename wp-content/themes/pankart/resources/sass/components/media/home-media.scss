@@ -1,3 +1,24 @@
+@media (max-width: 1040px) {
+  .ls-nav {
+    &__list {
+      transform-origin: top center;
+      right: 0;
+      top: calc(100% + 7px);
+      z-index: 1;
+      &::after {
+        content: '';
+        position: absolute;
+        left: calc(50% - 15px);
+        top: -15px;
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 15px solid $black;
+      }
+    }
+  }
+}
 @media (min-width: 1011px) {
   .presentation {
     grid-template-areas:
@@ -12,7 +33,6 @@
     grid-gap: $gap;
   }
 }
-
 @media (max-width: 900px) {
   .next-date {
     display: block;

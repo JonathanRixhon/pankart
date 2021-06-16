@@ -153,7 +153,7 @@ function pk_custom_post_type()
         'label' => 'Chanson',
         'labels' => [
             'singular_name' => 'Chanson',
-            'add_new_item' => 'Ajouter une date',
+            'add_new_item' => 'Ajouter une chanson',
             'add_new' => 'Ajouter une chanson',
         ],
         'description' => 'Toutes les chansons existantes.',
@@ -314,4 +314,19 @@ function pk_antecedent()
         }
     }
     return $content;
+}
+
+
+add_action('phpmailer_init', 'send_smtp_email');
+function send_smtp_email($phpmailer)
+{
+    $phpmailer->isSMTP();
+    $phpmailer->Host       = SMTP_HOST;
+    $phpmailer->SMTPAuth   = SMTP_AUTH;
+    $phpmailer->Port       = SMTP_PORT;
+    $phpmailer->SMTPSecure = SMTP_SECURE;
+    $phpmailer->Username   = SMTP_USERNAME;
+    $phpmailer->Password   = SMTP_PASSWORD;
+    $phpmailer->From       = SMTP_FROM;
+    $phpmailer->FromName   = SMTP_FROMNAME;
 }

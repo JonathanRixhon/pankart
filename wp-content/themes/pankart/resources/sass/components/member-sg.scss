@@ -1,0 +1,105 @@
+.member-page {
+  padding-top: 2.77777778em;
+  &__title {
+    font-size: $font-size-heading;
+    font-weight: 700;
+    margin-bottom: 0.68181818em;
+    text-align: center;
+  }
+  &__thumbnail {
+    display: block;
+    max-width: 754px;
+    width: 52.36111111%;
+    max-height: 525px;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto $gap;
+  }
+  .members {
+    margin-bottom: 8.33333333em;
+  }
+}
+.pi {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  max-width: 754px;
+  width: 52.36111111%;
+  margin: 0 auto 3.88888889em;
+  &__item {
+    margin-bottom: 1em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    &::before {
+      content: '';
+    }
+  }
+  &__name {
+    transition: max-width 0.4s ease-in-out, margin-left 0.2s linear;
+    max-width: 0;
+  }
+}
+
+.pi__item {
+  &_guitar {
+    &::before {
+      @include sprite-fct(48px, 48px, -80px, -240px, transparent);
+    }
+  }
+  &_drum {
+    &::before {
+      @include sprite-fct(48px, 52px, 0px, -240px, transparent);
+    }
+  }
+  &_choir {
+    &::before {
+      @include sprite-fct(48px, 53px, -400px, -240px, transparent);
+    }
+  }
+  &_accordion {
+    &::before {
+      @include sprite-fct(80px, 47px, -160px, -240px, transparent);
+    }
+  }
+  &_mandolin {
+    &::before {
+      @include sprite-fct(48px, 48px, -320px, -240px, transparent);
+    }
+  }
+  &_sing {
+    &::before {
+      @include sprite-fct(48px, 48px, -240px, -240px, transparent);
+    }
+  }
+  &_bass {
+    &::before {
+      @include sprite-fct(48px, 47px, -480px, -240px, transparent);
+    }
+  }
+  &_flute {
+    &::before {
+      @include sprite-fct(48px, 48px, -560px, -240px, transparent);
+    }
+  }
+}
+
+.pi__item:hover {
+  .pi__name {
+    margin-left: 1em;
+    max-width: 400px;
+  }
+}
+
+.member-decription {
+  width: 38.88888889%;
+  max-width: 560px;
+  margin: 0 auto;
+  p {
+    word-wrap: break-word;
+    margin-bottom: 0.66666667em;
+  }
+  margin-bottom: $gap;
+  @include text-support;
+}

@@ -7,7 +7,6 @@ $albums = new WP_Query([
     'order' => 'desc'
 ]);
 
-
 $firstAlbum = new WP_Query(array(
     'post_type'            => 'album',
     'posts_per_page'    => 1,
@@ -27,13 +26,12 @@ for ($date = intval(date('Y')); $date >= $firstAlbumDate; $date--) {
     }
 }
 ?>
-<main>
-    <h2>Discorahpie</h2>
+<main class="disco-page">
+    <h2 class="disco-page__title">Discorahpie</h2>
     <?php if (count($postsSorted)) : ?>
         <?php foreach ($postsSorted as $key => $posts) : ?>
-            <section>
-                <h3><?= $key ?></h3>
-
+            <section class="disco-year">
+                <h3 class="disco-year__title"><?= $key ?></h3>
                 <?php foreach ($posts as $post) : ?>
                     <?php get_template_part('template-parts/album-disco-part', null, ['post' => $post]) ?>
                 <?php endforeach; ?>

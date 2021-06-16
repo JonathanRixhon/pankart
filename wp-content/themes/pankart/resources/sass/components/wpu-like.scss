@@ -4,38 +4,83 @@ wp_ulike_is_already_liked
 wp_ulike_click_is_disabled 
 wp_ulike_btn_is_active 
 */
-.wpulike {
-  background-color: brown;
+
+.cdg-preview_cdg {
+  .wp_ulike_is_already_liked,
+  .wp_ulike_click_is_disabled {
+    .wp_ulike_btn,
+    .wp_ulike_btn_is_active {
+      background-color: $orange;
+      transform: rotate(4deg) /* scale(1.05, 1.05) */;
+      &::before {
+        @include sprite-fct(24px, 40px, -80px, -80px, transparent);
+      }
+    }
+  }
 }
+
+.cdg-preview_cdc {
+  .wp_ulike_is_already_liked,
+  .wp_ulike_click_is_disabled {
+    .wp_ulike_btn,
+    .wp_ulike_btn_is_active {
+      background-color: $orange;
+      transform: rotate(4deg) /* scale(1.05, 1.05) */;
+      &::before {
+        @include sprite-fct(34px, 33px, -240px, -160px, transparent);
+      }
+    }
+  }
+}
+
 .wp_ulike_general_class {
   margin: 0 auto;
   width: auto;
 }
-
 .wp_ulike_btn {
-  background-color: $orange;
-  border: 2px solid $black;
-  margin: 0 auto;
-  border-radius: 0.55555556em;
-  padding: 0.55555556em 1.38888889em;
-  @include icon-inline-block;
-  cursor: pointer;
-  transition: transform 0.1s ease-in-out;
-  &:hover {
-    transform: rotate(4deg) /* scale(1.05, 1.05) */;
-  }
-  &::before {
-    @include sprite-fct(24px, 40px, -80px, -80px, transparent);
-  }
+  min-height: 60px;
 }
-.wp_ulike_is_already_liked,
-.wp_ulike_click_is_disabled {
-  .wp_ulike_btn,
-  .wp_ulike_btn_is_active {
+.cdg-preview {
+  &_cdg {
+    .wp_ulike_btn {
+      &::before {
+        @include sprite-fct(24px, 40px, -80px, -160px, transparent);
+      }
+      &:hover {
+        transform: rotate(4deg) scale(1.05, 1.05);
+        background-color: $orange;
+        &::before {
+          @include sprite-fct(24px, 40px, -80px, -80px, transparent);
+        }
+      }
+    }
+  }
+  &_cdc {
+    .wp_ulike_btn {
+      &::before {
+        @include sprite-fct(34px, 33px, -160px, -160px, transparent);
+      }
+      &:hover {
+        transform: rotate(4deg) scale(1.05, 1.05);
+        background-color: $orange;
+        &::before {
+          @include sprite-fct(34px, 33px, -240px, -160px, transparent);
+        }
+      }
+    }
+  }
+  .wp_ulike_btn {
     background-color: $black;
-    transform: rotate(4deg) /* scale(1.05, 1.05) */;
+    border: 2px solid $black;
+    margin: 0 auto;
+    border-radius: 0.55555556em;
+    padding: 0.3em 1em;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
     &::before {
-      @include sprite-fct(24px, 40px, -80px, -160px, transparent);
+      content: '';
+      display: inline-block;
+      vertical-align: -7px;
     }
   }
 }

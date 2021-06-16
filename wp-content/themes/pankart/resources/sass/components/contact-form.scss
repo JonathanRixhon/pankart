@@ -1,0 +1,116 @@
+.contact-form-section {
+  display: flex;
+  background-color: $white;
+  min-height: 100vh;
+  &__img {
+    flex: 1;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0%, calc(100% - 4em) 100%, 0% 100%);
+    background-color: $black;
+    &__item {
+      width: 50%;
+      max-width: 475px;
+      height: auto;
+    }
+  }
+}
+.contact-form {
+  flex: 1;
+  padding: 3em 0;
+  background-color: $white;
+  display: grid;
+  grid-template-areas:
+    'title title'
+    'name firstname'
+    'obj obj'
+    'mail mail'
+    'message message'
+    '. send';
+  grid-template-columns: repeat(2, minmax(33.58116481%, 271px));
+  grid-template-rows: repeat(6, min-content);
+  align-content: center;
+  justify-content: center;
+  grid-column-gap: $gap;
+  &__title {
+    font-size: $font-size-heading-sec;
+    grid-area: title;
+    margin-bottom: 0.76923077em;
+  }
+  input,
+  label,
+  textarea,
+  select {
+    border: 1px solid $black;
+    background-color: $dark-white;
+    border-radius: 0.55555556em;
+    @include big-buttons;
+    margin-bottom: $gap;
+    text-align: left;
+  }
+  label {
+    z-index: 1;
+    cursor: pointer;
+  }
+  &__error-msg {
+    font-size: $font-size-small;
+    color: $red;
+    margin-bottom: 0.35714286em;
+    &_name {
+      grid-area: errname;
+    }
+    &_firstname {
+      grid-area: errfirstname;
+    }
+    &_obj {
+      grid-area: errobj;
+    }
+    &_email {
+      grid-area: errmail;
+    }
+    &_message {
+      grid-area: errmessage;
+    }
+  }
+}
+.contact-form_error {
+  grid-template-areas:
+    'title title'
+    'errname errfirstname'
+    'name firstname'
+    'errobj errobj'
+    'obj obj'
+    'errmail errmail'
+    'mail mail'
+    'errmessage errmessage'
+    'message message'
+    '. send';
+  grid-template-rows: repeat(10, min-content);
+}
+.cf {
+  &-firstname {
+    grid-area: firstname;
+  }
+  &-name {
+    grid-area: name;
+  }
+  &-obj {
+    grid-area: obj;
+  }
+  &-mail {
+    grid-area: mail;
+  }
+  &-message {
+    grid-area: message;
+    min-height: 114px;
+  }
+  &-send {
+    grid-area: send;
+    @include big-buttons;
+    background-color: $orange;
+    color: black;
+  }
+}
+@import './media/contact-form-media.scss';

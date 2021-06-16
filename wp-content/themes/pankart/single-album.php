@@ -1,23 +1,22 @@
 <?php get_header() ?>
 <main class="sg-album">
-    <section>
-        <h2><?php the_title() ?></h2>
-        <dl>
+    <section class='sg-album-intro'>
+        <h2 class='sg-album-intro__title'><?php the_title() ?></h2>
+        <dl class="sg-album-date">
             <dt class="sro">Date</dt>
-            <dd>Le <?= get_field('date-out') ?></dd>
+            <dd class="sg-album-date__content">Le <?= get_field('date-out') ?></dd>
         </dl>
-        <p>
+        <p class='sg-album-intro__content'>
             <?= get_field('description') ?>
         </p>
-        <button>Acheter l'album</button>
-        <button>Écouter l'album</button>
+        <img class='sg-album-intro__thumbnail' <?= pk_the_thumbnail_attributes(['album-cover']) ?> alt="test">
     </section>
-    <section>
-        <h2>Titres</h2>
+    <section class="sg-album-songs">
+        <h2 class="sg-album-songs__title">Titres</h2>
         <?php foreach (get_field('rel-songs') as $song) : ?>
-            <article>
-                <h3><?= $song->post_title ?></h3>
-                <ul>
+            <article class="sg-song">
+                <h3 class="sg-song__title"><?= $song->post_title ?></h3>
+                <ul class="sro">
                     <li>
                         <a href="<?= $song->guid ?>">Voir les paroles</a>
                     </li>
@@ -32,11 +31,11 @@
                         </ul>
                     </li>
                 </ul>
-                <p><?= get_field('description', $song->ID) ?></p>
-                <a href="#">lire la suite</a>
+                <p class="sg-song__description"><?= get_field('description', $song->ID) ?></p>
+                <a class="sg-song__read-more" href="">lire la suite</a>
             </article>
         <?php endforeach; ?>
     </section>
-    <a href="<?= get_permalink(25) ?>">Retour à la discographie</a>
+    <a class="sg-album__back-link" href="<?= get_permalink(25) ?>">Retour à la discographie</a>
 </main>
 <?php get_footer() ?>

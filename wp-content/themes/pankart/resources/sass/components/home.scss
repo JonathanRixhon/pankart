@@ -11,6 +11,7 @@
   }
   &__text {
     grid-area: content;
+    @include text-support;
   }
   &__img {
     grid-area: img;
@@ -110,7 +111,7 @@
   max-width: 336px;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 0 auto 9em;
   &__title {
     font-size: $font-size-heading-third;
     text-align: center;
@@ -121,7 +122,6 @@
     border-radius: 0.55555556em;
     margin-bottom: 1.66666667em;
   }
-  margin-bottom: 7em;
 }
 .ls-nav {
   position: relative;

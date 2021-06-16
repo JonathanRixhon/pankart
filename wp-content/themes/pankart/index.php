@@ -33,9 +33,10 @@ wp_reset_query();
 
 <main class="home-page">
     <section class="presentation">
-        <h2 class="presentation__title">
-            <span class="pankart">Pankart</span>
+        <h2 class=" sro">
+            <span class="pankart sro">Pankart</span>
         </h2>
+        <img class="presentation__title" src="<?= pk_asset("img/only_letters_logo.png") ?>" srcset="<?= pk_asset('img/only_letters_logo.png') ?> 475w, <?= pk_asset('img/only_letters_logo_238w.png') ?> 238w" alt="Pankart" sizes="19vw">
         <p class="presentation__text">
             <?= get_post_field('post_content', 5); ?>
         </p>

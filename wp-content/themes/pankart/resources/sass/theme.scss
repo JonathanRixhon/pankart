@@ -1,4 +1,5 @@
-@import 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap';
+@import './font.css';
+
 @import './reset.scss';
 @import './utils.scss';
 @import './components/wpu-like.scss';
@@ -7,6 +8,9 @@
 @import './components/home.scss';
 @import './components/agenda.scss';
 @import './components/news.scss';
-@import './components/news-signle.scss';
+@import './components/news-single.scss';
 @import './components/cdg.scss';
 @import './components/bio.scss';
+@import './components/disco.scss';
+@import './components/disco-single.scss';
+@import './components/member-sg.scss';

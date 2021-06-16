@@ -1,0 +1,103 @@
+.sg-album {
+  margin-bottom: 2.22222222em;
+  &__back-link {
+    display: block;
+    @include big-buttons;
+    background-color: $orange;
+    color: $black;
+    width: 18.75%;
+    margin: 0 10.41666667% 0 auto;
+  }
+}
+.sg-album-intro {
+  display: grid;
+
+  grid-template-columns:
+    10.41666667%
+    8fr
+    1fr
+    270px
+    10.41666667%;
+  grid-gap: $gap;
+  grid-auto-flow: column dense;
+  grid-template-rows: repeat(4, auto);
+  justify-content: center;
+  background-color: $black;
+  color: $white;
+  padding: 2.77777778em 0 5.55555556em;
+  margin-bottom: 1.66666667em;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.77777778em), 0% 100%);
+  &__title {
+    font-size: $font-size-heading;
+    font-weight: 700;
+    grid-column: 2;
+  }
+  &__content {
+    grid-column: 2;
+  }
+  &__thumbnail {
+    max-width: 270px;
+    width: 100%;
+    border-radius: 0.27777778em;
+    grid-column: -3;
+    grid-row: 1/-1;
+    align-self: center;
+  }
+}
+.sg-album-date {
+  margin-bottom: $gap;
+  grid-column: 2;
+}
+
+.sg-album-songs {
+  margin-bottom: 2.22222222em;
+  &__title {
+    font-size: $font-size-heading-sec;
+    width: $width-fixed;
+    max-width: $width-fixed-px;
+    margin: 0 auto 0;
+  }
+}
+.sg-song {
+  display: grid;
+  grid-template-columns: 17.15277778% 1fr 9fr 17.15277778%;
+  grid-template-rows: auto auto auto;
+  padding: 3.33333333em 0;
+  counter-reset: section;
+  counter-increment: step-counter;
+  &:nth-child(odd) {
+    background-color: white;
+  }
+  &::before {
+    content: counter(step-counter);
+    grid-column: 2;
+    grid-row: 1/-1;
+    text-align: center;
+    font-size: $font-size-heading-sec;
+    font-weight: 700;
+    align-self: center;
+    margin-right: 0.57142857em;
+  }
+  & > * {
+    grid-column: 3;
+  }
+  &__title {
+    font-size: $font-size-heading-third;
+    font-weight: 700;
+    margin-bottom: 0.93333333em;
+  }
+  &__description {
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 54px;
+    &_open {
+      max-height: 100%;
+    }
+  }
+  &__read-more {
+    margin-top: $gap;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+}
+@import './media/disco-media.scss';

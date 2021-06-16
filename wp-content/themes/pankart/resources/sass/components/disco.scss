@@ -1,0 +1,58 @@
+.disco-page {
+  padding-top: 2.77777778em;
+  &__title {
+    font-size: $font-size-heading;
+    font-weight: 700;
+    width: $width-fixed;
+    max-width: $width-fixed-px;
+    margin: 0 auto;
+  }
+}
+.disco-year {
+  &:nth-child(odd) {
+    background-color: $white;
+  }
+  padding-bottom: 1.66666667em;
+  &__title {
+    font-size: $font-size-heading-third;
+    border-bottom: 1px solid $black;
+    padding: 0.35714286em 10.41666667%;
+    margin-bottom: 1.07142857em;
+  }
+}
+.album {
+  display: grid;
+  grid-template-rows: repeat(2, auto) minmax(140px, 1fr) auto;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: $gap;
+  max-width: 754px;
+  max-height: 270px;
+  margin: 0 auto 1.66666667em;
+  &__title {
+    grid-column: 4/-1;
+    font-size: $font-size-heading-third;
+    font-weight: 700;
+  }
+  &__description {
+    grid-column: 4/-1;
+    word-break: break-all;
+    overflow: hidden;
+    margin-bottom: 1em;
+  }
+  &__cover {
+    width: 100%;
+    height: auto;
+    grid-row: 1/-1;
+    grid-column: span 3;
+    border-radius: 0.55555556em;
+  }
+  &__link {
+    width: 100%;
+    grid-column: span 3/-1;
+    @include big-buttons;
+    background-color: $orange;
+  }
+}
+.album-nbr {
+  grid-column: 4/-1;
+}

@@ -7,6 +7,44 @@ if (count(pk_antecedent())) {
     $antecedents = pk_antecedent();
 }
 $imgAbout = [get_field('img-about-1'), get_field('img-about-2')];
+
+$errors = [];
+$msg = [
+    'empty' => 'Veuillez remplir ce champ.',
+];
+
+$data = $_POST;
+if (isset($_POST) && count($error)) {
+    if ($_POST['contact-name'] === '') {
+        $errors['name'] = $msg['empty'];
+    }
+    if ($_POST['contact-firstname'] === '') {
+        $errors['firstname'] = $msg['empty'];
+    }
+    if ($_POST['contact-email'] === '') {
+        $errors['email'] = $msg['empty'];
+    }
+    if ($_POST['contact-obj'] === '') {
+        $errors['obj'] = $msg['empty'];
+    }
+    if ($_POST['contact-message'] === '') {
+        $errors['message'] = $msg['empty'];
+    }
+
+    if (!count($errors) && $_SERVER['REQUEST_METHOD'] === "POST") {
+        $formatedMessage = '
+        Message de ' . $data["contact-firstname"] . ' ' . $data["contact-name"] . '
+        ' . 'Adresse mail: ' . $data['contact-email'] . '
+        Message :
+        ' . $data['contact-message'];
+        if (wp_mail("reception@jonathanrixhon.me", $data['contact-obj'], $formatedMessage)) {
+            header('Location: ' . get_home_url());
+            exit();
+        } else {
+            $errors['crash'] = $msg['crash'];
+        }
+    }
+}
 ?>
 <?php get_header() ?>
 <main class="bio-grp-page">
@@ -46,23 +84,23 @@ $imgAbout = [get_field('img-about-1'), get_field('img-about-2')];
             <img class="bio-txt__deco-img bio-txt__deco-img_second" <?= pk_news_img_attributes(['album-cover'], get_field('img-left')) ?>>
         </section>
         <?php if ($members->have_posts()) : ?>
-            <section>
+            <section class='members'>
                 <h4 class='sro'>Les membres</h4>
                 <?php while ($members->have_posts()) : $members->the_post(); ?>
                     <?php get_template_part('template-parts/member-part', null) ?>
                 <?php endwhile; ?>
             </section>
         <?php endif; ?>
-        <section>
-            <h4>Retrouvez-nous sur les réseaux</h4>
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-        </section>
-        <section id="contact-form">
-            <h4>Nous contacter</h4>
-            <img src="" alt="img du logo du groupe">
-            <?php get_template_part('template-parts/contact-form', null) ?>
-        </section>
+    </section>
+    <section class="bio-social-media">
+        <h2 class="bio-social-media__title">Retrouvez-nous sur les réseaux</h2>
+        <a href="#" class="bio-social-media__link bio-social-media__link_instagram ">Instagram</a>
+        <a href="#" class="bio-social-media__link bio-social-media__link_facebook ">Facebook</a>
+    </section>
+    <section class="contact-form-section" id="contact-form">
+        <h2 class="contact-form-section__title sro">Contact</h2>
+        <figure class="contact-form-section__img"><img class="contact-form-section__img__item" src="<?= pk_asset('/img/only_letters_logo.png') ?>" alt="img du logo du groupe"></figure>
+        <?php get_template_part('template-parts/contact-form', null) ?>
     </section>
 </main>
 <?php get_footer() ?>

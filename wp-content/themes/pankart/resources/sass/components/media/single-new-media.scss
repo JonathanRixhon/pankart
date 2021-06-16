@@ -1,0 +1,36 @@
+@media (max-width: 1020px) {
+  .sg-new-page {
+    display: block;
+  }
+  .sg-new-interaction__list {
+    margin-bottom: 1em;
+  }
+  .sg-new-page__title {
+    margin-bottom: 0.3em;
+  }
+  .new-description {
+    margin-bottom: $gap;
+  }
+  .new-content__img-wrapper {
+    display: block;
+    .new-content__img {
+      max-height: 250px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      margin-bottom: $gap;
+    }
+  }
+}
+@media (max-width: 670px) {
+  /* .sg-new-interaction__list {
+    flex-direction: column;
+  }
+  .sg-new-interaction__button {
+    line-height: 2;
+    margin-bottom: 1em;
+  }
+  .sg-new-interaction__item {
+    width: 100%;
+  } */
+}

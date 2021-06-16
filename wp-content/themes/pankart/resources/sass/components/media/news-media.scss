@@ -1,0 +1,25 @@
+@media (max-width: 1170px) {
+  .last-new .np {
+    display: flex;
+    flex-direction: column;
+    &__thumbnail {
+      order: -1;
+      margin-bottom: $gap;
+    }
+    &-informations {
+      margin-bottom: $gap;
+    }
+    &__fake-link {
+      text-align: right;
+      width: 100%;
+    }
+  }
+  .news-list {
+    display: block;
+  }
+  .news-list .np {
+    width: 80%;
+    max-width: 560px;
+    margin-bottom: $gap;
+  }
+}

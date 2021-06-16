@@ -3,7 +3,7 @@ $orange: #df8f34;
 $dark-white: #f8f8f8;
 $white: #ffffff;
 $red: #df3434;
-$sprite-url: 'http://localhost:8888/pankart/wp-content/themes/pankart/public/img/sprite.svg'; //
+$sprite-url: 'http://pankart.jonathanrixhon.me/wp-content/themes/pankart/public/img/sprite.svg'; //
 
 $gap: 1.11111111em; //20
 $font-size-body: 1.125em; //18
@@ -33,21 +33,27 @@ a {
   text-decoration: none;
   line-height: inherit;
 }
+
+button,
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
-
+textarea {
+  resize: none;
+}
 /* Classes et premier css */
 html {
   box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
+
 .sro {
   position: absolute;
   overflow: hidden;
@@ -58,7 +64,65 @@ html {
   padding: 0;
   border: 0;
 }
+
 /* mixins */
+@mixin text-support {
+  a {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: 700;
+    :hover {
+      color: rgba($color: $black, $alpha: 0.9);
+    }
+  }
+  b,
+  strong {
+    font-weight: 700;
+  }
+  em,
+  i {
+    font-style: italic;
+  }
+  ul {
+    margin-bottom: 0.66666667em;
+    li {
+      margin-bottom: 0.33333333em;
+      &::before {
+        content: '•';
+        margin-right: 0.6666667em;
+      }
+      margin-left: 1em;
+    }
+  }
+  ol {
+    margin-bottom: 0.66666667em;
+    counter-reset: section;
+
+    li {
+      margin-bottom: 0.33333333em;
+      counter-increment: step-counter;
+      &::before {
+        content: counter(step-counter);
+        font-weight: 700;
+        margin-right: 0.6666667em;
+      }
+      padding-left: 1em;
+    }
+  }
+  blockquote {
+    width: 90%;
+    margin: 0 auto;
+    font-style: italic;
+    p {
+      &::before {
+        content: '« ';
+      }
+      &::after {
+        content: ' »';
+      }
+    }
+  }
+}
 @mixin screen-only {
   position: absolute;
   overflow: hidden;
@@ -146,9 +210,18 @@ html {
     }
   }
 }
+
+main {
+  min-height: 65vh;
+}
 body {
   @include font-lato();
   font-size: $font-size-body;
   line-height: 1.5;
   background-color: $dark-white;
+}
+@media (max-width: 650px) {
+  main {
+    font-size: 0.77777778em;
+  }
 }

@@ -5,6 +5,7 @@
   &__title {
     font-size: $font-size-heading;
     font-weight: 700;
+    margin: 1.13636364em 0 0.68181818em;
   }
 }
 .cdg-preview {
@@ -26,6 +27,7 @@
   }
   &__title {
     font-size: $font-size-heading-third;
+    margin-right: 3.5em;
     font-weight: 700;
   }
   &__content {

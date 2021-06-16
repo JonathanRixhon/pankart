@@ -13,10 +13,10 @@ $figcaption = get_field('legend'); ?>
                 </button>
                 <ul class="interaction-sub-list">
                     <li class="interaction-sub-list__item interaction-sub-list__item_facebook">
-                        <a href="" class="interaction-sub-list__link interaction-sub-list__link_facebook">Facebook</a>
+                        <a href="https://www.facebook.com/share.php?u=<?php the_permalink(); ?>" target="_blank" class="interaction-sub-list__link interaction-sub-list__link_facebook">Facebook</a>
                     </li>
                     <li class="interaction-sub-list__item interaction-sub-list__item_twitter">
-                        <a href="" class="interaction-sub-list__link interaction-sub-list__link_twitter">Twitter</a>
+                        <a href="http://twitter.com/home?status=<?php the_permalink() ?>" class="interaction-sub-list__link interaction-sub-list__link_twitter">Twitter</a>
                     </li>
                 </ul>
             </li>

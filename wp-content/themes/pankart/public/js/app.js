@@ -151,8 +151,12 @@ window.addEventListener('load', function (e) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./copy-link.js": "./wp-content/themes/pankart/resources/js/parts/copy-link.js",
+	"./js-form.js": "./wp-content/themes/pankart/resources/js/parts/js-form.js",
 	"./last-song.js": "./wp-content/themes/pankart/resources/js/parts/last-song.js",
 	"./menu-about.js": "./wp-content/themes/pankart/resources/js/parts/menu-about.js",
+	"./read-more.js": "./wp-content/themes/pankart/resources/js/parts/read-more.js",
+	"./share.js": "./wp-content/themes/pankart/resources/js/parts/share.js",
 	"./side-menu.js": "./wp-content/themes/pankart/resources/js/parts/side-menu.js"
 };
 
@@ -175,6 +179,133 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = "./wp-content/themes/pankart/resources/js/parts sync recursive \\.js$";
+
+/***/ }),
+
+/***/ "./wp-content/themes/pankart/resources/js/parts/copy-link.js":
+/*!*******************************************************************!*\
+  !*** ./wp-content/themes/pankart/resources/js/parts/copy-link.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CopyLink; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var CopyLink = /*#__PURE__*/function () {
+  function CopyLink(element) {
+    var _this = this;
+
+    _classCallCheck(this, CopyLink);
+
+    element.addEventListener('click', function (e) {
+      _this.copyToClipboard(_this.getUrl());
+    });
+  }
+
+  _createClass(CopyLink, [{
+    key: "getUrl",
+    value: function getUrl() {
+      return window.location.href;
+    }
+  }, {
+    key: "copyToClipboard",
+    value: function copyToClipboard(url) {
+      var elt = document.createElement('textarea');
+      elt.value = url; //faire en sorte que le text aria input soir invisible
+
+      elt.classList.add('sro');
+      elt.setAttribute('aria-hidden', 'true'); //ajouter l'elt au body, le sélectionner et le copier
+
+      document.body.appendChild(elt);
+      elt.select();
+      document.execCommand('copy');
+      document.body.removeChild(elt);
+    }
+  }], [{
+    key: "selector",
+    get: function get() {
+      return '.sg-new-interaction__button_copy';
+    }
+  }]);
+
+  return CopyLink;
+}();
+
+
+
+/***/ }),
+
+/***/ "./wp-content/themes/pankart/resources/js/parts/js-form.js":
+/*!*****************************************************************!*\
+  !*** ./wp-content/themes/pankart/resources/js/parts/js-form.js ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Form; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Form = /*#__PURE__*/function () {
+  function Form(element) {
+    _classCallCheck(this, Form);
+
+    this.formElt = element;
+    this.allLabels = this.formElt.querySelectorAll('label');
+    this.allInputs = this.formElt.querySelectorAll('input,textarea');
+    this.init();
+  }
+
+  _createClass(Form, [{
+    key: "init",
+    value: function init() {
+      var _this = this;
+
+      this.allInputs.forEach(function (input) {
+        input.addEventListener('focus', function (e) {
+          return _this.open(e.target);
+        });
+        input.addEventListener('focusout', function (e) {
+          return _this.close(e.target);
+        });
+      });
+    }
+  }, {
+    key: "open",
+    value: function open(input) {
+      console.log('cc');
+      input.style.zIndex = '1';
+    }
+  }, {
+    key: "close",
+    value: function close(input) {
+      if (!input.value) {
+        input.style = '';
+      }
+    }
+  }], [{
+    key: "selector",
+    get: function get() {
+      return '.form-js';
+    }
+  }]);
+
+  return Form;
+}();
+
+
 
 /***/ }),
 
@@ -348,6 +479,142 @@ var lastSong = /*#__PURE__*/function () {
     key: "selector",
     get: function get() {
       return '.top-nav__item_about';
+    }
+  }]);
+
+  return lastSong;
+}();
+
+
+
+/***/ }),
+
+/***/ "./wp-content/themes/pankart/resources/js/parts/read-more.js":
+/*!*******************************************************************!*\
+  !*** ./wp-content/themes/pankart/resources/js/parts/read-more.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return lastSong; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var lastSong = /*#__PURE__*/function () {
+  function lastSong(element) {
+    _classCallCheck(this, lastSong);
+
+    this.articleElt = element;
+    this.linkElt = this.articleElt.querySelector('.sg-song__read-more');
+    this.desctiptionElt = this.articleElt.querySelector('.sg-song__description');
+    this.init();
+  }
+
+  _createClass(lastSong, [{
+    key: "init",
+    value: function init() {
+      var _this = this;
+
+      console.log(this.linkElt);
+      this.linkElt.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        _this.open();
+      });
+    }
+  }, {
+    key: "open",
+    value: function open() {
+      this.desctiptionElt.classList.toggle('sg-song__description_open');
+      this.checkOpen();
+    }
+  }, {
+    key: "checkOpen",
+    value: function checkOpen() {
+      if (this.desctiptionElt.classList.contains('sg-song__description_open')) {
+        this.linkElt.textContent = 'Masquer';
+        return;
+      }
+
+      this.linkElt.textContent = 'lire la suite';
+    }
+  }], [{
+    key: "selector",
+    get: function get() {
+      return '.sg-song';
+    }
+  }]);
+
+  return lastSong;
+}();
+
+
+
+/***/ }),
+
+/***/ "./wp-content/themes/pankart/resources/js/parts/share.js":
+/*!***************************************************************!*\
+  !*** ./wp-content/themes/pankart/resources/js/parts/share.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return lastSong; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var lastSong = /*#__PURE__*/function () {
+  function lastSong(element) {
+    _classCallCheck(this, lastSong);
+
+    this.listElt = element;
+    this.linkList = document.querySelector('.interaction-sub-list');
+    this.buttonElt = this.listElt.querySelector('.sg-new-interaction__button_share');
+    this.isOpen = false;
+    this.init();
+  }
+
+  _createClass(lastSong, [{
+    key: "init",
+    value: function init() {
+      var _this = this;
+
+      this.checkOpen;
+      this.buttonElt.addEventListener('click', function (e) {
+        _this.open();
+
+        console.log(_this.linkList);
+      });
+    }
+  }, {
+    key: "open",
+    value: function open() {
+      this.isOpen = !this.isOpen;
+      this.checkOpen();
+    }
+  }, {
+    key: "checkOpen",
+    value: function checkOpen() {
+      if (this.isOpen === false) {
+        this.linkList.classList.remove('interaction-sub-list_open');
+      } else {
+        this.linkList.classList.add('interaction-sub-list_open');
+      }
+    }
+  }], [{
+    key: "selector",
+    get: function get() {
+      return '.sg-new-interaction__item_share';
     }
   }]);
 

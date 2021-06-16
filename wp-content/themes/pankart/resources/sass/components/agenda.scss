@@ -46,7 +46,8 @@
     @include big-buttons;
     background-color: $orange;
     color: $black;
-    width: 26.40350877%;
+    width: 30%;
+    //width: 26.40350877%;
   }
   &__link {
     position: absolute;
@@ -61,3 +62,5 @@
     text-align: center;
   }
 }
+
+@import './media/agenda-media.scss';
